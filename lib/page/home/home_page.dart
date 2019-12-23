@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_forlearn/page/article/article_page.dart';
 import 'package:flutter_app_forlearn/page/home/bloc/home_evetn.dart';
 import 'package:flutter_app_forlearn/page/home/home_drawer.dart';
 import 'package:flutter_app_forlearn/page/project/project_page.dart';
@@ -47,12 +48,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   //实际上如果子页已经AutomaticKeepAliveClientMixin了，那也没必要再用PageStorageKey去保存滚动状态了，因为切换tab时页面根本不会被销毁
   Map<String, Widget> tabs = {
     res.project: ProjectSubPage(keys[0]),
-//    res.article: ArticleSubPage(keys[1]),
+    res.article: ArticleSubPage(keys[1]),
 //    res.vxArticle: WXArticleSubPage(keys[2]),
 //    res.navigation: NavigationSubPage(),
 //    res.collect: CollectSubPage(),
 //        res.project: Text(res.project),
-    res.article: Text(res.article),
+//    res.article: Text(res.article),
     res.vxArticle: Text(res.vxArticle),
     res.navigation: Text(res.navigation),
     res.collect: Text(res.collect),

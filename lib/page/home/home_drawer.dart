@@ -12,8 +12,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../main.dart';
 import 'bloc/HomeBloc.dart';
+import 'drawer/about_page.dart';
 
 ///主页侧滑菜单
+// ignore: must_be_immutable
 class HomeDrawer extends StatefulWidget {
 
 
@@ -219,7 +221,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
 //                  Navigator.pushNamed(context, SupportAuthorPage.ROUTER_NAME);
                 }),
                 _menuItem(Icon(Icons.error_outline), res.about, () {
-//                  Navigator.pushNamed(context, AboutPage.ROUTER_NAME);
+                  Navigator.pushNamed(context, AboutPage.ROUTER_NAME);
                 }),
                 _menuItem(Icon(Icons.account_circle),
                     widget.isLogin ? res.logout : res.login, () {
@@ -357,7 +359,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
 //                  BmobFeedbackEntity feedback = BmobFeedbackEntity(
 ////                      widget.userName ?? '未登录用户', controller.text ?? '空');
 //                  feedback.save().then((_) {
-//                    print('feedback send success');
+//                   print('feedback send success');
 //                  });
                   Navigator.of(context).pop();
                 },

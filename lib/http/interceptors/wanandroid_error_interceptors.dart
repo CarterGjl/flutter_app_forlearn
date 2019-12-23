@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 
+import 'package:flutter_app_forlearn/page/account/login_page.dart';
+
+import '../../main.dart';
 import '../index.dart';
 
 /// ```
@@ -53,7 +56,7 @@ class WanAndroidErrorInterceptors extends InterceptorsWrapper {
   void goLogin() {
     ///在拿不到context的地方通过navigatorKey进行路由跳转：
     ///https://stackoverflow.com/questions/52962112/how-to-navigate-without-context-in-flutter-app
-//    navigatorKey.currentState.pushNamed(LoginWanandroidPage.ROUTER_NAME);
+    navigatorKey.currentState.pushNamed(LoginPage.ROUTER_NAME);
 
   }
 }

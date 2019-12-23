@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_forlearn/page/account/login_page.dart';
+import 'package:flutter_app_forlearn/page/home/drawer/about_page.dart';
 import 'package:flutter_app_forlearn/page/home/home_page.dart';
 import 'package:flutter_app_forlearn/page/project/project_detail_page.dart';
 import 'package:flutter_app_forlearn/page/search/search_page.dart';
@@ -19,7 +20,7 @@ final Map<String, WidgetBuilder> routes = {
   ProjectDetailPage.ROUTER_NAME: (context) => new ProjectDetailPage(),
   WebViewPage.ROUTER_NAME: (context) => WebViewPage(),
 //  SupportAuthorPage.ROUTER_NAME: (context) => SupportAuthorPage(),
-//  AboutPage.ROUTER_NAME: (context) => AboutPage(),
+  AboutPage.ROUTER_NAME: (context) => AboutPage(),
 //  RankPage.ROUTER_NAME: (c) => RankPage(),
   SearchPage.ROUTER_NAME: (_) => SearchPage(),
 };
@@ -29,6 +30,62 @@ void main() async {
   runApp(MyApp());
 }
 
+
+class StatelessContainer extends StatelessWidget {
+
+  final Color color;
+
+  StatelessContainer(this.color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      height: 100,
+      color: color,
+    );
+  }
+
+}
+
+
+class Screen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _ScreenState();
+  }
+
+}
+
+class _ScreenState extends State<Screen> {
+  List<Widget> widgets = [
+    StatelessContainer(Colors.amberAccent),
+    StatelessContainer(Colors.blue),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: widgets,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: switchWidget,
+        child: Icon(Icons.undo),
+      ),
+    );
+  }
+
+  void switchWidget() {
+    widgets.insert(0, widgets.removeAt(1));
+    setState(() {
+
+    });
+  }
+}
 ///开源版本我不会上传appkey相关数据，bmob相关操作禁用。
 bool bmobEnable = false;
 bool _blocDebug = true;

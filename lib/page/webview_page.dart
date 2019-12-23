@@ -50,6 +50,12 @@ class _WebViewPageState extends State<WebViewPage> {
     }
     return WebviewScaffold(
       url: url,
+      withZoom:false,
+      useWideViewPort: true,
+      withOverviewMode: true,
+      displayZoomControls: false,
+      supportMultipleWindows: false,
+
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Row(
@@ -101,7 +107,7 @@ class _WebViewPageState extends State<WebViewPage> {
       ),
       hidden: true,
       initialChild: getLoading(),
-      withZoom: true,
+//      withZoom: true,
       withLocalStorage: true,
     );
   }
